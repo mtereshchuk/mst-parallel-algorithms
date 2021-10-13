@@ -1,3 +1,5 @@
+results_directory='results'
+
 threads.number_add=4
 execution.repeat=3
 plot.length=16

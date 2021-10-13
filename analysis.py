@@ -97,7 +97,9 @@ def main():
             plt.xlabel('Number of vertices')
             plt.ylabel('Time in seconds')
             plt.legend()
-            plt.savefig(f'{density_type_name}-graphs.png')
+
+            results_path = config['results_directory']
+            plt.savefig(f'{results_path}/{density_type_name}-graphs.png')
 
 
 if __name__ == '__main__':
