@@ -31,13 +31,11 @@ class BaseKruskal(MstAlgorithm):
         return self._handle_chunks(_sort_edges_chunk_f, _sort_edges_merge_f, edges)
 
     def _handle_chunks(self, chunk_f, merge_f, arr):
-        # print('BaseKruskal._handle_chunks')
         return self._raise_not_implemented_error()
 
 
 class SequentialKruskal(BaseKruskal, SequentialAlgorithm):
     def _handle_chunks(self, chunk_f, merge_f, arr):
-        # print('SequentialKruskal._handle_chunks')
         return chunk_f(arr)
 
 
@@ -46,7 +44,6 @@ class ParallelKruskal(BaseKruskal, ParallelAlgorithm):
         super().__init__(executor)
 
     def _handle_chunks(self, chunk_f, merge_f, arr):
-        # print('ParallelKruskal._handle_chunks')
         return self._parallel_chunks(chunk_f, merge_f, arr)
 
 

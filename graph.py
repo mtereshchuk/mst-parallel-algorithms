@@ -7,19 +7,19 @@ from enum import Enum
 
 
 class DensityType(Enum):
-    # SPARSE = 0
-    # MEDIUM = 1
+    SPARSE = 0
+    MEDIUM = 1
     DENSE = 2
 
     def random_edges_num(self, min_offset, max_offset, n):
         offset = random.uniform(min_offset, max_offset)
 
-        # if self == self.SPARSE:
-        #     return int(self._min_edge_num(n) * (1 + offset))
+        if self == self.SPARSE:
+            return int(self._min_edge_num(n) * (1 + offset))
 
-        # if self == self.MEDIUM:
-        #     medium_offset = 1 - offset if bool(random.getrandbits(1)) else 1 + offset
-        #     return int(((self._max_edge_num(n) - self._min_edge_num(n)) / 2) * medium_offset)
+        if self == self.MEDIUM:
+            medium_offset = 1 - offset if bool(random.getrandbits(1)) else 1 + offset
+            return int(((self._max_edge_num(n) - self._min_edge_num(n)) / 2) * medium_offset)
 
         return int(self._max_edge_num(n) * (1 - offset))
 

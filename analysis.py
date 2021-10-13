@@ -61,9 +61,11 @@ def main():
             min_offset, max_offset = density_cfg['min_offset'], density_cfg['max_offset']
 
             results = defaultdict(lambda: [])
-            for n in vertices_number_range:
-                if n == 0:
+            for n_ in vertices_number_range:
+                if n_ == 0:
                     n = vertices_cfg['min_number']
+                else:
+                    n = n_
 
                 m = densityType.random_edges_num(min_offset, max_offset, n)
                 logging.debug(f'Test graph with {n} vertices and {m} edges')
@@ -89,13 +91,13 @@ def main():
             vertices_numbers = list(vertices_number_range)
             vertices_numbers[0] = vertices_cfg['min_number']
             for name, times in results.items():
-                plt.scatter(vertices_number_range, times, label=name)
+                plt.plot(vertices_number_range, times, label=name)
 
             plt.title(f'{density_type_name.capitalize()} graphs')
             plt.xlabel('Number of vertices')
             plt.ylabel('Time in seconds')
             plt.legend()
-            plt.show()
+            plt.savefig(f'{density_type_name}-graphs.png')
 
 
 if __name__ == '__main__':

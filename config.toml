@@ -3,9 +3,9 @@ execution.repeat=3
 plot.length=16
 plot.width=8
 
-vertices.min_number=5000
+vertices.min_number=10
 vertices.max_number=5000
-vertices.number_step=100
+vertices.number_step=250
 
 edges.sparse.min_offset=0.25
 edges.sparse.max_offset=0.3

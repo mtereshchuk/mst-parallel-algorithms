@@ -4,3 +4,4 @@
 *.pptx
 *.docx
 __pycache__/
+*.png
