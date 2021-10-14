@@ -1,7 +1,7 @@
 results_directory='results'
 
 threads.number_add=4
-execution.repeat=3
+execution.repeat=5
 plot.length=16
 plot.width=8
 
